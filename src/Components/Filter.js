@@ -1,30 +1,30 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 
-const Filter = ({tasks,handleFilter }) => {
+const Filter = ({handleFilter }) => {
 
     const handleFilterAll = ()=>{
-        handleFilter(tasks)
+        handleFilter("All")
     }
 
     const handleFilterDone = ()=>{
-        handleFilter(tasks.filter(e=>e.isDone))
+        handleFilter("Done")
     }
 
     const handleFilternot = ()=>{
-        handleFilter(tasks.filter(e=>!e.isDone))
+        handleFilter("Not")
     }
 
     return (
         <Row>
             <Col ms='4'>
-            <input type="submit" value="All" className="Btn" onClick={handleFilterAll}/>
+            <input type="submit" value="All Tasks" className="Btn" onClick={handleFilterAll}/>
             </Col>
             <Col ms='4'>
             <input type="submit" value="Completed" className="Btn" onClick={handleFilterDone}/>
             </Col>
             <Col ms='4'>
-            <input type="submit" value="Active" className="Btn" onClick={handleFilternot}/>
+            <input type="submit" value="Uncompleted" className="Btn" onClick={handleFilternot}/>
             </Col>
         </Row>
     )
